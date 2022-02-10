@@ -7,7 +7,7 @@ protocol characterListViewModelProtocols : AnyObject{
     func getErrorFrom(err : String)
     func getErrorFromServer()
 }
-class ListViewModel {
+class CharacterListViewModel {
     
     var characterModel : CharacterModel?
     weak var delegate : characterListViewModelProtocols?

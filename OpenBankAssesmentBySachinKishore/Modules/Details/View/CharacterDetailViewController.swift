@@ -18,6 +18,7 @@ class CharacterDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.detailViewModel?.delegate = self
+        self.setActivityIndicator()
         self.detailViewModel?.getCharacterDetailsApi()
     }
     func setData(){
@@ -35,14 +36,17 @@ class CharacterDetailViewController: BaseViewController {
 }
 extension CharacterDetailViewController : CharacterDetailViewModelProtocol{
     func getListOfCharacters() {
+        self.progressLoader?.removeFromSuperview()
         self.setData()
     }
     
     func getErrorFrom(err: String) {
+        self.progressLoader?.removeFromSuperview()
         self.showAlertView(title: error, messsage: err)
     }
     
     func getErrorFromServer() {
+        self.progressLoader?.removeFromSuperview()
         self.showAlertView(title: error, messsage: serverMsg)
     }
     

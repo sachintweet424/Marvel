@@ -71,6 +71,7 @@
 		D655529B27B5031C006A6007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D655529927B5031C006A6007 /* LaunchScreen.storyboard */; };
 		D655529C27B5031C006A6007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D655529927B5031C006A6007 /* LaunchScreen.storyboard */; };
 		D655529E27B537DD006A6007 /* CharacterDetailTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655529D27B537DD006A6007 /* CharacterDetailTestCases.swift */; };
+		D65552A027B53D63006A6007 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655529F27B53D62006A6007 /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		D655527427B502A5006A6007 /* CharacterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		D655529927B5031C006A6007 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D655529D27B537DD006A6007 /* CharacterDetailTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailTestCases.swift; sourceTree = "<group>"; };
+		D655529F27B53D62006A6007 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		D655524427B50291006A6007 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D655529F27B53D62006A6007 /* ActivityIndicatorView.swift */,
 				D655524527B50291006A6007 /* Messages.swift */,
 				D655524627B50291006A6007 /* Marvel.plist */,
 				D655524727B50291006A6007 /* BaseViewController.swift */,
@@ -472,6 +475,7 @@
 				D655525427B50291006A6007 /* StoryBoard.swift in Sources */,
 				D655521727B5025A006A6007 /* SceneDelegate.swift in Sources */,
 				D655527E27B502A5006A6007 /* ListViewModel.swift in Sources */,
+				D65552A027B53D63006A6007 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,13 +47,7 @@ func getApiKeys() -> [String:String] {
 
 }
 class CustomImageView: UIImageView {
-
-    // MARK: - Constants
-
     let imageCache = NSCache<NSString, AnyObject>()
-
-    // MARK: - Properties
-
     var imageURLString: String?
 
     func downloadImageFrom(urlString: String, imageMode: UIView.ContentMode) {
