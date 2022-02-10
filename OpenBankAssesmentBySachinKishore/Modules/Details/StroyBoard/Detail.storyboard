@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Character Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CharacterDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="CharacterDetailViewController" customModule="OpenBankAssesmentBySachinKishore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NZ-VP-sW7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfZ-fd-7wW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="604"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-l4-X72" customClass="CustomImageView" customModule="OpenBankAssesmentBySachinKishore" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vJi-l4-X72" secondAttribute="height" multiplier="207:275" id="hE9-6v-hLa"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-MA-Su6">
+                                                <rect key="frame" x="22" y="572" width="370" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFk-mD-dBv">
+                                                <rect key="frame" x="22" y="584" width="370" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vJi-l4-X72" secondAttribute="trailing" id="8YS-Wr-ebI"/>
+                                            <constraint firstItem="xFk-mD-dBv" firstAttribute="top" secondItem="fBd-MA-Su6" secondAttribute="bottom" constant="12" id="8jB-Ab-G6a"/>
+                                            <constraint firstItem="vJi-l4-X72" firstAttribute="leading" secondItem="HfZ-fd-7wW" secondAttribute="leading" id="KfP-L5-Vz9"/>
+                                            <constraint firstAttribute="trailing" secondItem="fBd-MA-Su6" secondAttribute="trailing" constant="22" id="Lpf-99-qCZ"/>
+                                            <constraint firstItem="fBd-MA-Su6" firstAttribute="top" secondItem="vJi-l4-X72" secondAttribute="bottom" constant="22" id="Ohz-7d-Bvs"/>
+                                            <constraint firstItem="vJi-l4-X72" firstAttribute="top" secondItem="HfZ-fd-7wW" secondAttribute="top" id="RJs-ii-CLl"/>
+                                            <constraint firstAttribute="bottom" secondItem="xFk-mD-dBv" secondAttribute="bottom" constant="20" symbolic="YES" id="Wwl-8g-IWT"/>
+                                            <constraint firstItem="fBd-MA-Su6" firstAttribute="leading" secondItem="HfZ-fd-7wW" secondAttribute="leading" constant="22" id="hoL-9T-Nou"/>
+                                            <constraint firstItem="xFk-mD-dBv" firstAttribute="leading" secondItem="fBd-MA-Su6" secondAttribute="leading" id="nCD-Td-xH2"/>
+                                            <constraint firstItem="xFk-mD-dBv" firstAttribute="trailing" secondItem="fBd-MA-Su6" secondAttribute="trailing" id="vlk-Ob-Wtd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HfZ-fd-7wW" firstAttribute="top" secondItem="3NZ-VP-sW7" secondAttribute="top" id="0QG-Pw-REH"/>
+                                    <constraint firstAttribute="trailing" secondItem="HfZ-fd-7wW" secondAttribute="trailing" id="4cv-xa-Vl7"/>
+                                    <constraint firstAttribute="bottom" secondItem="HfZ-fd-7wW" secondAttribute="bottom" constant="308" id="Mop-iE-RNC"/>
+                                    <constraint firstItem="HfZ-fd-7wW" firstAttribute="leading" secondItem="3NZ-VP-sW7" secondAttribute="leading" id="QVl-os-Oqi"/>
+                                    <constraint firstItem="HfZ-fd-7wW" firstAttribute="width" secondItem="3NZ-VP-sW7" secondAttribute="width" id="mIF-0T-6iU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3NZ-VP-sW7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="3QW-Df-hn4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3NZ-VP-sW7" secondAttribute="bottom" id="T9a-Px-Eoq"/>
+                            <constraint firstAttribute="top" secondItem="3NZ-VP-sW7" secondAttribute="top" id="qCq-Ye-HHz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3NZ-VP-sW7" secondAttribute="trailing" id="sF3-9P-e2m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="xFk-mD-dBv" id="vwy-Zw-hOQ"/>
+                        <outlet property="marvelImageView" destination="vJi-l4-X72" id="9H9-D7-Z37"/>
+                        <outlet property="titleLabel" destination="fBd-MA-Su6" id="5YR-9y-DW8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
