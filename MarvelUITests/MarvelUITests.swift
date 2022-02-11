@@ -1,13 +1,13 @@
 //
-//  OpenBankAssesmentBySachinKishoreUITests.swift
-//  OpenBankAssesmentBySachinKishoreUITests
+//  MarvelUITests.swift
+//  MarvelUITests
 //
-//  Created by Techugo on 10/02/22.
+//  Created by Techugo on 11/02/22.
 //
 
 import XCTest
 
-class OpenBankAssesmentBySachinKishoreUITests: XCTestCase {
+class MarvelUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

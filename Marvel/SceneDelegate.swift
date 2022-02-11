@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  OpenBankAssesmentBySachinKishore
-//
-//  Created by Techugo on 10/02/22.
-//
+
 
 import UIKit
 

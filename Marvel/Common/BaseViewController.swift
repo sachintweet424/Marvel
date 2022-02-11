@@ -1,12 +1,7 @@
-//
-//  BaseViewController.swift
-//  OpenBankBySachinKishore
-//
-//  Created by Techugo on 10/02/22.
-//
+
 
 import UIKit
-
+import AVFoundation
 class BaseViewController: UIViewController {
 
     var progressLoader : UIActivityIndicatorView?
@@ -16,7 +11,7 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func setActivityIndicator() {
-        progressLoader = ActivityIndicatorView.customIndicator(at:self.view.center)
+        progressLoader = ActivityIndicatorView.customIndicator(at: self.view.center)
         self.view.addSubview(progressLoader!)
         progressLoader?.startAnimating()
     }

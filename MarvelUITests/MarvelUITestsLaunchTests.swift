@@ -1,13 +1,13 @@
 //
-//  OpenBankAssesmentBySachinKishoreUITestsLaunchTests.swift
-//  OpenBankAssesmentBySachinKishoreUITests
+//  MarvelUITestsLaunchTests.swift
+//  MarvelUITests
 //
-//  Created by Techugo on 10/02/22.
+//  Created by Techugo on 11/02/22.
 //
 
 import XCTest
 
-class OpenBankAssesmentBySachinKishoreUITestsLaunchTests: XCTestCase {
+class MarvelUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

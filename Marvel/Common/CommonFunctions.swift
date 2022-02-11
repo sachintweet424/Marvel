@@ -1,9 +1,3 @@
-//
-//  CommonFunctions.swift
-//  OpenBankBySachinKishore
-//
-//  Created by Techugo on 09/02/22.
-//
 
 import Foundation
 import UIKit

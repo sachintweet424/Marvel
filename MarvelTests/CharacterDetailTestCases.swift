@@ -1,21 +1,32 @@
 //
-//  OpenBankAssesmentBySachinKishoreTests.swift
-//  OpenBankAssesmentBySachinKishoreTests
+//  CharacterDetailTestCases.swift
+//  MarvelTests
 //
-//  Created by Techugo on 10/02/22.
+//  Created by Techugo on 11/02/22.
 //
 
 import XCTest
-@testable import OpenBankAssesmentBySachinKishore
 
-class CharacterListTestCases: XCTestCase {
+class CharacterDetailTestCases: XCTestCase {
+
     var characterModel : CharacterModel?
     var errorModel : ErrorModel?
     private var publicKey = getApiKeys()[Constants.publicKey.rawValue] ?? ""
     private var privateKey = getApiKeys()[Constants.privateKey.rawValue] ?? ""
-    func testCharacterListApiResourceWithEmptyStringRturnsError() {
-        let expectation = self.expectation(description: "testCharacterListApiResource")
-        let url = "\(baseUrl)characters?ts=&apikey=&hash="
+    func testCharacterDetailApiResourceWithEmptyStringRturnsError() {
+        let expectation = self.expectation(description: "testCharacterDetailApiResourceWithEmptyStringRturnsError")
+        let url = "\(baseUrl)characters/?ts=&apikey=&hash="
+        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
+            let jsonDecoder = JSONDecoder()
+            self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
+            XCTAssertEqual(self.errorModel?.code, "ResourceNotFound")
+            expectation.fulfill()
+        })
+        waitForExpectations(timeout: 20, handler: nil)
+    }
+    func testCharacterDetailApiResourceWithInvalidHashParametersRturnsError() {
+        let expectation = self.expectation(description: "testCharacterDetailApiResourceWithInvalidHashParametersRturnsError")
+        let url = "\(baseUrl)characters/-1?ts=22222&apikey=nfjndjfjdjf&hash=4r4r4rr44r"
         APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
@@ -25,23 +36,11 @@ class CharacterListTestCases: XCTestCase {
         })
         waitForExpectations(timeout: 20, handler: nil)
     }
-    func testCharacterListApiResourceWithInvalidHashParametersRturnsError() {
-        let expectation = self.expectation(description: "testCharacterListApiResourceWithInvalidHashParametersRturnsError")
-        let url = "\(baseUrl)characters?ts=22222&apikey=nfjndjfjdjf&hash=4r4r4rr44r"
-        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
-            let jsonDecoder = JSONDecoder()
-            self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
-            XCTAssertEqual(self.errorModel?.message, "The passed API key is invalid.")
-            XCTAssertEqual(self.errorModel?.code, "InvalidCredentials")
-            expectation.fulfill()
-        })
-        waitForExpectations(timeout: 20, handler: nil)
-    }
-    func testCharacterListApiResourceWithMissingtsReturnsError() {
-        let expectation = self.expectation(description: "testCharacterListApiResourceWithMissingtsReturnsError")
+    func testCharacterDetailApiResourceWithMissingtsReturnsError() {
+        let expectation = self.expectation(description: "testCharacterDetailApiResourceWithMissingtsReturnsError")
         let ts = String(Int(Date().timeIntervalSinceNow))
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
-        let url = "\(baseUrl)characters?apikey=\(publicKey)&hash=\(hash)"
+        let url = "\(baseUrl)characters/1011334?apikey=\(publicKey)&hash=\(hash)"
         APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
@@ -51,12 +50,12 @@ class CharacterListTestCases: XCTestCase {
         })
         waitForExpectations(timeout: 20, handler: nil)
     }
-    func testCharacterListApiResourceWithvalidHashParametersReturnsCorrectResponse() {
+    func testCharacterDetailApiResourceWithvalidHashParametersReturnsCorrectResponse() {
         let expectation = self.expectation(description: "testCharacterListApiResourceWithvalidHashParametersReturnsCorrectResponse")
         let ts = String(Int(Date().timeIntervalSinceNow))
         
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
-        let url = "\(baseUrl)characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+        let url = "\(baseUrl)characters/1011334?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
         APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.characterModel = try? jsonDecoder.decode(CharacterModel.self, from: jsonData!)
@@ -66,5 +65,5 @@ class CharacterListTestCases: XCTestCase {
         })
         waitForExpectations(timeout: 20, handler: nil)
     }
-}
 
+}
