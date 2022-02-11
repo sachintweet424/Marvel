@@ -160,7 +160,6 @@
 			children = (
 				D6B4F32727B6297F003E5EBD /* AppDelegate.swift */,
 				D6B4F34327B62992003E5EBD /* Assets.xcassets */,
-				D6B4F34427B62992003E5EBD /* Base.lproj */,
 				D6B4F34527B62993003E5EBD /* Common */,
 				D6B4F34D27B62993003E5EBD /* LaunchScreen.storyboard */,
 				D6B4F32B27B62992003E5EBD /* Modules */,
@@ -285,14 +284,6 @@
 				D6B4F34227B62992003E5EBD /* CharacterListViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D6B4F34427B62992003E5EBD /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Base.lproj;
-			path = "../../../../Marvel 2/Marvel/Base.lproj";
 			sourceTree = "<group>";
 		};
 		D6B4F34527B62993003E5EBD /* Common */ = {
