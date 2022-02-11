@@ -8,6 +8,8 @@ enum Constants : String{
     case publicKey
     case privateKey
 }
+
+//MARK: Set Shadow of View
 func setCellCardShadow(view : UIView){
     view.layer.shadowColor = UIColor.black.cgColor
     view.layer.shadowOffset = CGSize(width: 0.0 ,height:0.0)
@@ -16,18 +18,15 @@ func setCellCardShadow(view : UIView){
     view.layer.masksToBounds = false
     
 }
+//MARK: Genrate hash from Cryptokit
 func md5Hash(_ source: String) -> String {
     let digest = Insecure.MD5.hash(data: source.data(using: .utf8) ?? Data())
     return digest.map {
         String(format: "%02hhx", $0)
     }.joined()
 }
-func showLoader(){
-   
-}
-func hideLoader(){
-   
-}
+
+//MARK: Get Keys from Info Plist file
 func getApiKeys() -> [String:String] {
     if let path = Bundle.main.path(forResource:"Marvel", ofType: "plist") {
         let plist = NSDictionary(contentsOfFile: path) ?? ["":""]
@@ -40,6 +39,8 @@ func getApiKeys() -> [String:String] {
     return ["":""]
 
 }
+
+//MARK: Image View Class for Caching the image and downloading
 class CustomImageView: UIImageView {
     let imageCache = NSCache<NSString, AnyObject>()
     var imageURLString: String?
@@ -65,3 +66,4 @@ class CustomImageView: UIImageView {
         }
     }
 }
+

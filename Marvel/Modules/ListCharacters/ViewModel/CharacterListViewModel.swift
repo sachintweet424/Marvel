@@ -2,6 +2,7 @@
 import Foundation
 import CryptoKit
 
+//MARK: ViewModel Protocols
 protocol characterListViewModelProtocols : AnyObject{
     func getListOfCharacters()
     func getErrorFrom(err : String)
@@ -9,11 +10,13 @@ protocol characterListViewModelProtocols : AnyObject{
 }
 class CharacterListViewModel {
     
+    //MARK: Variables
     var characterModel : CharacterModel?
     weak var delegate : characterListViewModelProtocols?
     private var publicKey = getApiKeys()[Constants.publicKey.rawValue] ?? ""
     private var privateKey = getApiKeys()[Constants.privateKey.rawValue] ?? ""
     
+    //MARK: Hit api of Get character List from Marvel
     func getCharacterList(){
         let ts = String(Int(Date().timeIntervalSinceNow))
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")

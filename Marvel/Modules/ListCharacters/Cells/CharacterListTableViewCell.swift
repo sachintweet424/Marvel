@@ -9,19 +9,23 @@ import UIKit
 
 class CharacterListTableViewCell: UITableViewCell {
 
+    //MARK: IBOutlets
     @IBOutlet weak var characterImageView: CustomImageView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
   
-    
+    //MARK: Variables
     static let nib = UINib.init(nibName: "CharacterListTableViewCell", bundle: nil)
     static let indent = "CharacterListTableViewCell"
     
+    //MARK: Cell Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
       
     }
+    
+    //MARK: Assign data from Model to Cell
     func bindData(model : ResultsModel?){
         guard let model = model else {
             return

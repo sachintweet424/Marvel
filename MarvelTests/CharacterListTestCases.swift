@@ -13,8 +13,10 @@ class CharacterListTestCases: XCTestCase {
     var errorModel : ErrorModel?
     private var publicKey = getApiKeys()[Constants.publicKey.rawValue] ?? ""
     private var privateKey = getApiKeys()[Constants.privateKey.rawValue] ?? ""
+    
+    //MARK: Test Character List Api Resource With Empty String and RturnsError
     func testCharacterListApiResourceWithEmptyStringRturnsError() {
-        let expectation = self.expectation(description: "testCharacterListApiResource")
+        let expectation = self.expectation(description: "emptyString")
         let url = "\(baseUrl)characters?ts=&apikey=&hash="
         APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
@@ -23,10 +25,11 @@ class CharacterListTestCases: XCTestCase {
             XCTAssertEqual(self.errorModel?.code, "InvalidCredentials")
             expectation.fulfill()
         })
-        waitForExpectations(timeout: 20, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
+    //MARK: Test Character List Api Resource With Invalid Hash Parameters and RturnsError
     func testCharacterListApiResourceWithInvalidHashParametersRturnsError() {
-        let expectation = self.expectation(description: "testCharacterListApiResourceWithInvalidHashParametersRturnsError")
+        let expectation = self.expectation(description: "invalidHash")
         let url = "\(baseUrl)characters?ts=22222&apikey=nfjndjfjdjf&hash=4r4r4rr44r"
         APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
@@ -35,10 +38,12 @@ class CharacterListTestCases: XCTestCase {
             XCTAssertEqual(self.errorModel?.code, "InvalidCredentials")
             expectation.fulfill()
         })
-        waitForExpectations(timeout: 20, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    //MARK: Test Character List Api Resource With Missing TimeStamp and RturnsError
     func testCharacterListApiResourceWithMissingtsReturnsError() {
-        let expectation = self.expectation(description: "testCharacterListApiResourceWithMissingtsReturnsError")
+        let expectation = self.expectation(description: "missedTimeStamp")
         let ts = String(Int(Date().timeIntervalSinceNow))
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
         let url = "\(baseUrl)characters?apikey=\(publicKey)&hash=\(hash)"
@@ -49,10 +54,12 @@ class CharacterListTestCases: XCTestCase {
             XCTAssertEqual(self.errorModel?.code, "MissingParameter")
             expectation.fulfill()
         })
-        waitForExpectations(timeout: 20, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
+    
+    //MARK: Test Character List Api Resource With Valid Parameters and returns Correct Response
     func testCharacterListApiResourceWithvalidHashParametersReturnsCorrectResponse() {
-        let expectation = self.expectation(description: "testCharacterListApiResourceWithvalidHashParametersReturnsCorrectResponse")
+        let expectation = self.expectation(description: "validParametes")
         let ts = String(Int(Date().timeIntervalSinceNow))
         
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
@@ -64,7 +71,7 @@ class CharacterListTestCases: XCTestCase {
             XCTAssertEqual(self.characterModel?.status, "Ok")
             expectation.fulfill()
         })
-        waitForExpectations(timeout: 20, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
 }
 

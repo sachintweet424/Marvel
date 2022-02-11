@@ -44,19 +44,19 @@
 		D6B4F36B27B62993003E5EBD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34627B62993003E5EBD /* Messages.swift */; };
 		D6B4F36C27B62993003E5EBD /* Marvel.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6B4F34727B62993003E5EBD /* Marvel.plist */; };
 		D6B4F36D27B62993003E5EBD /* Marvel.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6B4F34727B62993003E5EBD /* Marvel.plist */; };
-		D6B4F36E27B62993003E5EBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34827B62993003E5EBD /* BaseViewController.swift */; };
-		D6B4F36F27B62993003E5EBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34827B62993003E5EBD /* BaseViewController.swift */; };
-		D6B4F37027B62993003E5EBD /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34927B62993003E5EBD /* StoryBoard.swift */; };
-		D6B4F37127B62993003E5EBD /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34927B62993003E5EBD /* StoryBoard.swift */; };
+		D6B4F36E27B62993003E5EBD /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34827B62993003E5EBD /* ParentViewController.swift */; };
+		D6B4F36F27B62993003E5EBD /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34827B62993003E5EBD /* ParentViewController.swift */; };
 		D6B4F37227B62993003E5EBD /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34A27B62993003E5EBD /* CommonFunctions.swift */; };
 		D6B4F37327B62993003E5EBD /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34A27B62993003E5EBD /* CommonFunctions.swift */; };
 		D6B4F37427B62993003E5EBD /* APIClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34B27B62993003E5EBD /* APIClass.swift */; };
 		D6B4F37527B62993003E5EBD /* APIClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34B27B62993003E5EBD /* APIClass.swift */; };
-		D6B4F37627B62993003E5EBD /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34C27B62993003E5EBD /* ActivityIndicatorView.swift */; };
-		D6B4F37727B62993003E5EBD /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34C27B62993003E5EBD /* ActivityIndicatorView.swift */; };
+		D6B4F37627B62993003E5EBD /* ActivityProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34C27B62993003E5EBD /* ActivityProgressView.swift */; };
+		D6B4F37727B62993003E5EBD /* ActivityProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F34C27B62993003E5EBD /* ActivityProgressView.swift */; };
 		D6B4F37827B62993003E5EBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B4F34D27B62993003E5EBD /* LaunchScreen.storyboard */; };
 		D6B4F37927B62993003E5EBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B4F34D27B62993003E5EBD /* LaunchScreen.storyboard */; };
 		D6B4F37E27B62B32003E5EBD /* CharacterDetailTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F37D27B62B32003E5EBD /* CharacterDetailTestCases.swift */; };
+		D6B4F38027B67759003E5EBD /* InternetConnectCheckClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F37F27B67759003E5EBD /* InternetConnectCheckClass.swift */; };
+		D6B4F38127B68542003E5EBD /* InternetConnectCheckClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B4F37F27B67759003E5EBD /* InternetConnectCheckClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,13 +101,13 @@
 		D6B4F34327B62992003E5EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6B4F34627B62993003E5EBD /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		D6B4F34727B62993003E5EBD /* Marvel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Marvel.plist; sourceTree = "<group>"; };
-		D6B4F34827B62993003E5EBD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		D6B4F34927B62993003E5EBD /* StoryBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoard.swift; sourceTree = "<group>"; };
+		D6B4F34827B62993003E5EBD /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		D6B4F34A27B62993003E5EBD /* CommonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 		D6B4F34B27B62993003E5EBD /* APIClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClass.swift; sourceTree = "<group>"; };
-		D6B4F34C27B62993003E5EBD /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		D6B4F34C27B62993003E5EBD /* ActivityProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityProgressView.swift; sourceTree = "<group>"; };
 		D6B4F34D27B62993003E5EBD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6B4F37D27B62B32003E5EBD /* CharacterDetailTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailTestCases.swift; sourceTree = "<group>"; };
+		D6B4F37F27B67759003E5EBD /* InternetConnectCheckClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectCheckClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,20 +191,20 @@
 		D6B4F32B27B62992003E5EBD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D6B4F32C27B62992003E5EBD /* Details */,
+				D6B4F32C27B62992003E5EBD /* CharacterDetails */,
 				D6B4F33327B62992003E5EBD /* ListCharacters */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		D6B4F32C27B62992003E5EBD /* Details */ = {
+		D6B4F32C27B62992003E5EBD /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
 				D6B4F32D27B62992003E5EBD /* ViewModel */,
 				D6B4F32F27B62992003E5EBD /* StroyBoard */,
 				D6B4F33127B62992003E5EBD /* View */,
 			);
-			path = Details;
+			path = CharacterDetails;
 			sourceTree = "<group>";
 		};
 		D6B4F32D27B62992003E5EBD /* ViewModel */ = {
@@ -300,11 +300,11 @@
 			children = (
 				D6B4F34627B62993003E5EBD /* Messages.swift */,
 				D6B4F34727B62993003E5EBD /* Marvel.plist */,
-				D6B4F34827B62993003E5EBD /* BaseViewController.swift */,
-				D6B4F34927B62993003E5EBD /* StoryBoard.swift */,
+				D6B4F34827B62993003E5EBD /* ParentViewController.swift */,
 				D6B4F34A27B62993003E5EBD /* CommonFunctions.swift */,
 				D6B4F34B27B62993003E5EBD /* APIClass.swift */,
-				D6B4F34C27B62993003E5EBD /* ActivityIndicatorView.swift */,
+				D6B4F34C27B62993003E5EBD /* ActivityProgressView.swift */,
+				D6B4F37F27B67759003E5EBD /* InternetConnectCheckClass.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -450,7 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6B4F36E27B62993003E5EBD /* BaseViewController.swift in Sources */,
+				D6B4F36E27B62993003E5EBD /* ParentViewController.swift in Sources */,
 				D6B4F36627B62993003E5EBD /* CharacterListViewController.swift in Sources */,
 				D6B4F36A27B62993003E5EBD /* Messages.swift in Sources */,
 				D6B4F35E27B62993003E5EBD /* DataModel.swift in Sources */,
@@ -463,10 +463,10 @@
 				D6B4F32827B6297F003E5EBD /* AppDelegate.swift in Sources */,
 				D6B4F36227B62993003E5EBD /* CharacterModel.swift in Sources */,
 				D6B4F35627B62993003E5EBD /* CharacterListViewModel.swift in Sources */,
+				D6B4F38027B67759003E5EBD /* InternetConnectCheckClass.swift in Sources */,
 				D6B4F37227B62993003E5EBD /* CommonFunctions.swift in Sources */,
-				D6B4F37027B62993003E5EBD /* StoryBoard.swift in Sources */,
 				D6B4F34E27B62993003E5EBD /* SceneDelegate.swift in Sources */,
-				D6B4F37627B62993003E5EBD /* ActivityIndicatorView.swift in Sources */,
+				D6B4F37627B62993003E5EBD /* ActivityProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,17 +480,17 @@
 				D6B4F36327B62993003E5EBD /* CharacterModel.swift in Sources */,
 				D6B4F32927B6297F003E5EBD /* AppDelegate.swift in Sources */,
 				D6B4F36727B62993003E5EBD /* CharacterListViewController.swift in Sources */,
-				D6B4F36F27B62993003E5EBD /* BaseViewController.swift in Sources */,
+				D6B4F36F27B62993003E5EBD /* ParentViewController.swift in Sources */,
 				D6B4F35127B62993003E5EBD /* CharacterDetailViewModel.swift in Sources */,
 				D6B4F36B27B62993003E5EBD /* Messages.swift in Sources */,
 				D6B4F37E27B62B32003E5EBD /* CharacterDetailTestCases.swift in Sources */,
 				D6B4F30F27B628C3003E5EBD /* CharacterListTestCases.swift in Sources */,
+				D6B4F38127B68542003E5EBD /* InternetConnectCheckClass.swift in Sources */,
 				D6B4F35B27B62993003E5EBD /* CharacterListTableViewCell.swift in Sources */,
-				D6B4F37127B62993003E5EBD /* StoryBoard.swift in Sources */,
 				D6B4F35F27B62993003E5EBD /* DataModel.swift in Sources */,
 				D6B4F35727B62993003E5EBD /* CharacterListViewModel.swift in Sources */,
 				D6B4F37527B62993003E5EBD /* APIClass.swift in Sources */,
-				D6B4F37727B62993003E5EBD /* ActivityIndicatorView.swift in Sources */,
+				D6B4F37727B62993003E5EBD /* ActivityProgressView.swift in Sources */,
 				D6B4F34F27B62993003E5EBD /* SceneDelegate.swift in Sources */,
 				D6B4F36127B62993003E5EBD /* ThumbnailModel.swift in Sources */,
 			);

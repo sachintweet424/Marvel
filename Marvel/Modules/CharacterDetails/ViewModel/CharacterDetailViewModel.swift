@@ -3,6 +3,7 @@
 import Foundation
 import CryptoKit
 
+//MARK: CharacterDetailViewModelProtocol Methods
 protocol CharacterDetailViewModelProtocol : AnyObject{
     func getListOfCharacters()
     func getErrorFrom(err : String)
@@ -10,14 +11,19 @@ protocol CharacterDetailViewModelProtocol : AnyObject{
 }
 class CharacterDetailViewModel {
     
+    //MARK: Variables
     var characterModel : CharacterModel?
     weak var delegate : CharacterDetailViewModelProtocol?
     private var publicKey = getApiKeys()[Constants.publicKey.rawValue] ?? ""
     private var privateKey = getApiKeys()[Constants.privateKey.rawValue] ?? ""
     var charcterId : String?
+    
+    //MARK: Initializer
     init(id : String) {
         self.charcterId = id
     }
+    
+    //MARK: Hit Api of Detail of Character
     func getCharacterDetailsApi(){
         let ts = String(Int(Date().timeIntervalSinceNow))
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")

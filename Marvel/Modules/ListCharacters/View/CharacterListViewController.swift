@@ -7,11 +7,15 @@
 
 import UIKit
 
-class CharacterListViewController: BaseViewController {
-
+class CharacterListViewController: ParentViewController {
+    
+    //MARK: IBOutlets
     @IBOutlet weak var listTableView: UITableView!
+    
+    //MARK: Variables
     var characterListViewModel = CharacterListViewModel()
-  
+    
+    //MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.characterListViewModel.delegate = self
@@ -19,9 +23,9 @@ class CharacterListViewController: BaseViewController {
         self.setActivityIndicator()
         self.characterListViewModel.getCharacterList()
     }
-  
 }
 
+//MARK: Using UITableViewDelegate,UITableViewDataSource
 extension CharacterListViewController : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,10 +42,24 @@ extension CharacterListViewController : UITableViewDelegate,UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewControllerInstance = CharacterDetailViewController.instance()
         viewControllerInstance.detailViewModel = CharacterDetailViewModel.init(id: "\(self.characterListViewModel.characterModel?.data?.results?[indexPath.row].id ?? 0)")
-        self.present(viewControllerInstance, animated: true, completion: nil)
+        self.navigationController?.pushViewController(viewControllerInstance, animated: true)
     }
 }
 
+//MARK: Naviagtion extension
+extension CharacterListViewController{
+    class func instance()-> CharacterListViewController{
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        return mainStoryboard.instantiateViewController(withIdentifier: "CharacterListViewController") as! CharacterListViewController
+    }
+    
+    class func navigation()-> UINavigationController{
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        return mainStoryboard.instantiateViewController(withIdentifier: "nav") as! UINavigationController
+    }
+}
+
+//MARK: Use ViewModel Protocols
 extension CharacterListViewController : characterListViewModelProtocols{
     func getListOfCharacters() {
         self.progressLoader?.removeFromSuperview()
