@@ -30,7 +30,7 @@ class APIClass {
             task.resume()
         }
         else{
-          
+          showAlertView(title: internetIssue, messsage: connectToInternet)
         }
     }
 
