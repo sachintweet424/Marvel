@@ -7,7 +7,7 @@ var baseUrl = "https://gateway.marvel.com:443/v1/public/"
 class APIClass {
     
     //MARK: Get Api Request Method
-    func getList(url : String,completion:@escaping (_ jsonData:Data? , _ error:Error?, _ statuscode : Int? )->()){
+    func getRequest(url : String,completion:@escaping (_ jsonData:Data? , _ error:Error?, _ statuscode : Int? )->()){
         if InternetConnectCheckClass.isConnectedToNetwork(){
             let request = URLRequest(url: URL.init(string: url)!)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

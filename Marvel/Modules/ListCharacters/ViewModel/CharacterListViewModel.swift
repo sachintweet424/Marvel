@@ -13,15 +13,15 @@ class CharacterListViewModel {
     //MARK: Variables
     var characterModel : CharacterModel?
     weak var delegate : characterListViewModelProtocols?
-    private var publicKey = getApiKeys()[Constants.publicKey.rawValue] ?? ""
-    private var privateKey = getApiKeys()[Constants.privateKey.rawValue] ?? ""
+    private var publicKey = getPublicPrivateKeys()[Constants.publicKey.rawValue] ?? ""
+    private var privateKey = getPublicPrivateKeys()[Constants.privateKey.rawValue] ?? ""
     
     //MARK: Hit api of Get character List from Marvel
     func getCharacterList(){
         let ts = String(Int(Date().timeIntervalSinceNow))
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
         let url = "\(baseUrl)characters?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
-        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
+        APIClass.init().getRequest(url: url, completion: { jsonData, error, statuscode in
             if let error = error {
                 self.delegate?.getErrorFrom(err: error.localizedDescription)
                 return

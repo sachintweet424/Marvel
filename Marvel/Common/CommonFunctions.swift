@@ -27,7 +27,7 @@ func md5Hash(_ source: String) -> String {
 }
 
 //MARK: Get Keys from Info Plist file
-func getApiKeys() -> [String:String] {
+func getPublicPrivateKeys() -> [String:String] {
     if let path = Bundle.main.path(forResource:"Marvel", ofType: "plist") {
         let plist = NSDictionary(contentsOfFile: path) ?? ["":""]
         let publicKey = plist[Constants.publicKey.rawValue] as! String

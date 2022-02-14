@@ -1,9 +1,6 @@
 //
 //  MarvelUITestsLaunchTests.swift
 //  MarvelUITests
-//
-//  Created by Techugo on 11/02/22.
-//
 
 import XCTest
 

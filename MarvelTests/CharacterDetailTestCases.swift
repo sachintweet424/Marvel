@@ -11,14 +11,14 @@ class CharacterDetailTestCases: XCTestCase {
 
     var characterModel : CharacterModel?
     var errorModel : ErrorModel?
-    private var publicKey = getApiKeys()[Constants.publicKey.rawValue] ?? ""
-    private var privateKey = getApiKeys()[Constants.privateKey.rawValue] ?? ""
+    private var publicKey = getPublicPrivateKeys()[Constants.publicKey.rawValue] ?? ""
+    private var privateKey = getPublicPrivateKeys()[Constants.privateKey.rawValue] ?? ""
  
     //MARK: Test Character Detail Api Resource With Empty String and RturnsError
     func testCharacterDetailApiResourceWithEmptyStringRturnsError() {
         let expectation = self.expectation(description: "emptyString")
         let url = "\(baseUrl)characters/?ts=&apikey=&hash="
-        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
+        APIClass.init().getRequest(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
             XCTAssertEqual(self.errorModel?.code, "ResourceNotFound")
@@ -31,7 +31,7 @@ class CharacterDetailTestCases: XCTestCase {
     func testCharacterDetailApiResourceWithInvalidHashParametersRturnsError() {
         let expectation = self.expectation(description: "invalid")
         let url = "\(baseUrl)characters/-1?ts=22222&apikey=nfjndjfjdjf&hash=4r4r4rr44r"
-        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
+        APIClass.init().getRequest(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
             XCTAssertEqual(self.errorModel?.message, "The passed API key is invalid.")
@@ -47,7 +47,7 @@ class CharacterDetailTestCases: XCTestCase {
         let ts = String(Int(Date().timeIntervalSinceNow))
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
         let url = "\(baseUrl)characters/1011334?apikey=\(publicKey)&hash=\(hash)"
-        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
+        APIClass.init().getRequest(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.errorModel = try? jsonDecoder.decode(ErrorModel.self, from: jsonData!)
             XCTAssertEqual(self.errorModel?.message, "You must provide a timestamp.")
@@ -64,7 +64,7 @@ class CharacterDetailTestCases: XCTestCase {
         
         let hash = md5Hash("\(ts)\(privateKey)\(publicKey)")
         let url = "\(baseUrl)characters/1011334?ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
-        APIClass.init().getList(url: url, completion: { jsonData, error, statuscode in
+        APIClass.init().getRequest(url: url, completion: { jsonData, error, statuscode in
             let jsonDecoder = JSONDecoder()
             self.characterModel = try? jsonDecoder.decode(CharacterModel.self, from: jsonData!)
             XCTAssertNotNil(self.characterModel?.data?.results)
